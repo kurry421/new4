@@ -15,11 +15,11 @@ $email = $_POST['email'];
 $userUid = $_POST['userUid'];
 
  
-if ($token == "" || $amount == ""){
+// if ($token == "" || $amount == ""){
 	
-	echo "no token";
-	return;
-}
+// 	echo "no token";
+// 	return;
+// }
 
 //Create a Customer
 try{
@@ -33,7 +33,7 @@ try{
      
      $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!' );
 
-    header("Content-Type: application/json");
+    // header("Content-Type: application/json");
     echo json_encode($response);
  // Use Stripe's library to make requests...
 } catch(\Stripe\Error\Card $e) {
