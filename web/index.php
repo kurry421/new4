@@ -15,11 +15,11 @@ $email = $_POST['email'];
 $userUid = $_POST['userUid'];
 
  
-// if ($token == "" || $amount == ""){
+if ($token == ""){
 	
-// 	echo "no token";
-// 	return;
-// }
+	echo "no token";
+	return;
+}
 
 //Create a Customer
 try{
