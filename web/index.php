@@ -35,7 +35,7 @@ try{
      
     //$customerIdSave = $customer->id;
 	
-     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customer->id);
+     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customer->id, 'subscription'=> $customer->subscriptions->data->id);
 
     // header("Content-Type: application/json");
     echo json_encode($response);
