@@ -31,9 +31,9 @@ try{
 	  "metadata" => array("userUid" => $userUid)
 	));
      
-    //$customerIdSave = $customer->'id';
+    $customerIdSave = $customer->id;
 	
-     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!');
+     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=>$customerIdSave);
 
     // header("Content-Type: application/json");
     echo json_encode($response);
@@ -49,7 +49,7 @@ try{
   // param is '' in this case
   print('Param is:' . $err['param'] . "\n");
   print('Message is:' . $err['message'] . "\n");
-  //print('Cust Id is:' $customerIdSave);
+  print('Cust Id is:' $customerIdSave);
 
   header("Content-Type: application/json");
   echo json_encode($err);
