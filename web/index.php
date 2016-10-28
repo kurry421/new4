@@ -29,11 +29,13 @@ try{
 	  "description" => $description,
 	  "email" => $email,
 	  "metadata" => array("userUid" => $userUid)
+		
+	  $customerId = $customer->id;
 	));
      
     //$customerIdSave = $customer->id;
 	
-     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customer->id);
+     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customerId);
 
     // header("Content-Type: application/json");
     echo json_encode($response);
@@ -49,7 +51,7 @@ try{
   // param is '' in this case
   print('Param is:' . $err['param'] . "\n");
   print('Message is:' . $err['message'] . "\n");
-  //print('Cust Id is:' $customerIdSave);
+  print('Cust Id is:' . $err['customerId'] . "\n");
 
   header("Content-Type: application/json");
   echo json_encode($err);
