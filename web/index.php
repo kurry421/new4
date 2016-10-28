@@ -51,7 +51,7 @@ try{
   // param is '' in this case
   print('Param is:' . $err['param'] . "\n");
   print('Message is:' . $err['message'] . "\n");
-  print('Cust Id is:' . $err['customerId'] . "\n");
+  //print('custoerId is:' . $err['customerId'] . "\n");
 
   header("Content-Type: application/json");
   echo json_encode($err);
