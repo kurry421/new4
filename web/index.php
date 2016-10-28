@@ -30,12 +30,12 @@ try{
 	  "email" => $email,
 	  "metadata" => array("userUid" => $userUid)
 		
-	  $customerId = $customer->id;
+	  //$customerId = $customer->id;
 	));
      
     //$customerIdSave = $customer->id;
 	
-     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customerId);
+     $response = array( 'status'=> 'Success', 'message'=>'Payment has been charged!!', 'customerId'=> $customer->id);
 
     // header("Content-Type: application/json");
     echo json_encode($response);
