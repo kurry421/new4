@@ -17,13 +17,13 @@ $customerStripeID = $_POST['customerStripeID'];
 $customerStripePlanID = $_POST['customerStripePlanID'];
 $newPlan = $_POST['newPlan'];
  
-if ($token == ""){
+// if ($token == ""){
 
-	echo "no token";
-	return;
-}
+// 	echo "no token";
+// 	return;
+// }
 
-if ($customerStripeID){
+if (!$token){
   try{
     $subscription = \Stripe\Subscription::retrieve($customerStripePlanID);
     $subscription->plan = $newPlan;
@@ -53,7 +53,7 @@ if ($customerStripeID){
  
 }
 
-if (!$customerStripeID){
+if ($token){
 
   //Create a Customer
   try{
