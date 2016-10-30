@@ -13,7 +13,9 @@ $description = $_POST['description'];
 $plan = $_POST['plan'];
 $email = $_POST['email'];
 $userUid = $_POST['userUid'];
-
+$customerStripeID = $_POST['customerStripeID'];
+$customerStripePlanID = $_POST['customerStripePlanID'];
+$newPlan = $_POST['newPlan'];
  
 if ($token == ""){
 	
