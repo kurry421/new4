@@ -11,7 +11,11 @@ $customerStripeID = $_POST['customerStripeID'];
 $customerStripePlanID = $_POST['customerStripePlanID'];
 $newPlan = $_POST['newPlan'];
  
-echo "change plan";
+if ($token == ""){
+  
+  echo "changing plan token";
+  return;
+}
 
 
 //Create a Customer
