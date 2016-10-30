@@ -15,14 +15,13 @@ $newPlan = $_POST['newPlan'];
 //Create a Customer
 try{
 	
-	$customer = Stripe_Customer::retrieve($customerStripeID);
-	$subscription = $customer -> subscriptions -> retrieve($customerStripePlanID);
-	$subscription -> plan = $newPlan;
-	$subscription -> save();
+$subscription = \Stripe\Subscription::retrieve($customerStripePlanID);
+$subscription->plan = $newPlan;
+$subscription->save();
 
 	));
 	
-     $response = array( 'status'=> 'Success', 'message'=>'Plan has been updated!', 'planEnd'=> $customer->subscriptions->data[0]->current_period_end);
+     $response = array( 'status'=> 'Success', 'message'=>'Plan has been updated!', 'planEnd'=> $customerStripeID->subscriptions->data[0]->current_period_end);
 
     // header("Content-Type: application/json");
     echo json_encode($response);
