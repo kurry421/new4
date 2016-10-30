@@ -11,6 +11,8 @@ $customerStripeID = $_POST['customerStripeID'];
 $customerStripePlanID = $_POST['customerStripePlanID'];
 $newPlan = $_POST['newPlan'];
  
+echo "change plan";
+
 
 //Create a Customer
 try{
